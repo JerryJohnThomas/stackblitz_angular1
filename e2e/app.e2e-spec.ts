@@ -1,16 +1,14 @@
-import { AnimationsDemoPage } from './app.po';
+import { ReduxDemoPage } from './app.po';
 
-describe('animations-demo App', () => {
-  let page: AnimationsDemoPage;
+describe('redux-demo App', function() {
+  let page: ReduxDemoPage;
 
   beforeEach(() => {
-    page = new AnimationsDemoPage();
+    page = new ReduxDemoPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
-      .then(done, done.fail);
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
